@@ -1,0 +1,2 @@
+class Linker < ApplicationRecord
+end
