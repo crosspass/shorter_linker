@@ -64,11 +64,11 @@ class LinkersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_linker
-      @linker = Linker.find(params[:id])
+      @linker = Linker.find_by(uid: params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def linker_params
-      params.fetch(:linker, {})
+      params.fetch(:linker, {}).permit(:url, :email)
     end
 end

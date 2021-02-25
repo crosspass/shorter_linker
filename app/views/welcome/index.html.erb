@@ -1,0 +1,14 @@
+<h1>Linker Shorter</h1>
+
+
+<%= form_with model: Linker.new  do |f| %>
+<div>
+<%= f.label :url, 'url you want short', class: 'required' %>
+<%= f.text_field :url %>
+</div>
+<div>
+<%= f.label :email, 'email', class: 'required' %>
+<%= f.text_field :email %>
+</div>
+<%= f.submit 'submit' %>
+<% end %>
