@@ -44,6 +44,7 @@ group :development do
   gem "rubocop", "~> 1.8"
   gem "capistrano", "~> 3.14", require: false
   gem 'capistrano3-puma'
+  gem 'capistrano-rbenv'
 end
 
 group :test do
@@ -62,4 +63,5 @@ gem "devise", "~> 4.7"
 gem 'sidekiq'
 
 
-gem 'holiday_workday', path: '/Users/wu/github.com/wyc/holiday_workday'
+# gem 'holiday_workday', path: '/Users/wu/github.com/wyc/holiday_workday'
+gem 'holiday_workday', github: "crosspass/holiday_workday", branch: 'main'

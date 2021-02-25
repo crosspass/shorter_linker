@@ -2,7 +2,7 @@
 lock "~> 3.15.0"
 
 set :application, "shorter_linker"
-set :repo_url, "git@github.com:crosspass/shorter_linke.git"
+set :repo_url, "git@github.com:crosspass/shorter_linker.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -28,6 +28,12 @@ set :repo_url, "git@github.com:crosspass/shorter_linke.git"
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
+set :rbenv_type, :user
+set :rbenv_ruby, File.read('.ruby-version').strip
+set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
+set :rbenv_map_bins, %w{rake gem bundle ruby rails}
+set :rbenv_roles, :all # default value
+
 
 # Default value for local_user is ENV['USER']
 # set :local_user, -> { `git config user.name`.chomp }
