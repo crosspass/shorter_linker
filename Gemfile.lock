@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/crosspass/holiday_workday.git
-  revision: b3a5ddf91ac2ffbb5f28279693a50e9816fef721
+  revision: b9c98d59ce65d34d1ea91073475a509208247e12
   branch: main
   specs:
     holiday_workday (0.1.0)
