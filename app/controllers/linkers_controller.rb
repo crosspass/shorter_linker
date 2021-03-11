@@ -1,5 +1,6 @@
 class LinkersController < ApplicationController
-  before_action :set_linker, only: [:show, :edit, :update, :destroy]
+  before_action :set_linker, only: %i[show edit update destroy]
+  skip_before_action :authenticate_user!, only: %i[new create show]
 
   # GET /linkers
   # GET /linkers.json
@@ -9,8 +10,7 @@ class LinkersController < ApplicationController
 
   # GET /linkers/1
   # GET /linkers/1.json
-  def show
-  end
+  def show; end
 
   # GET /linkers/new
   def new
@@ -18,13 +18,13 @@ class LinkersController < ApplicationController
   end
 
   # GET /linkers/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /linkers
   # POST /linkers.json
   def create
-    @linker = Linker.new(linker_params)
+    @linker = Linker.find_by(url: linker_params[:url], email: linker_params[:email])
+    @linker ||= Linker.new(linker_params)
 
     respond_to do |format|
       if @linker.save
@@ -33,6 +33,7 @@ class LinkersController < ApplicationController
       else
         format.html { render :new }
         format.json { render json: @linker.errors, status: :unprocessable_entity }
+        format.js { render 'validate_form.js.erb' }
       end
     end
   end
@@ -62,13 +63,13 @@ class LinkersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_linker
-      @linker = Linker.find_by(uid: params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def linker_params
-      params.fetch(:linker, {}).permit(:url, :email)
-    end
+  def set_linker
+    @linker = Linker.find_by(id: params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def linker_params
+    params.fetch(:linker, {}).permit(:url, :email)
+  end
 end

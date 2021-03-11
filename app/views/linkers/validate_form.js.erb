@@ -1,0 +1,2 @@
+var form = document.querySelector("#form");
+form.innerHTML="<%= j( render :partial => 'form', locals: {linker: @linker} ) %>"

@@ -1,17 +1,20 @@
-<%= form_with(model: linker, local: true) do |form| %>
-  <% if linker.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(linker.errors.count, "error") %> prohibited this linker from being saved:</h2>
-
-      <ul>
-        <% linker.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_with(model: linker) do |form| %>
+  <div class="group">
+    <%= form.label :url, 'Url you want short', class: 'required' %>
+    <%= form.text_field :url, class: 'input input-url' %>
+    <% if linker.errors.include?(:url) %>
+    <small class="text-danger"><%= linker.errors.full_messages_for(:url).join(',') %></small>
+    <% end %>
+  </div>
+  <div class="group">
+    <%= form.label :email, 'email', class: 'required' %>
+    <%= form.text_field :email, class: 'input' %>
+    <% if linker.errors.include?(:email) %>
+    <small class="text-danger"><%= linker.errors.full_messages_for(:email).join(',') %></small>
+    <% end %>
+  </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'submit' %>
   </div>
 <% end %>

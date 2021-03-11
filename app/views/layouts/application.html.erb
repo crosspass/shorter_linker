@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>LinkerShorter</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LinkerShorter</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-  <body>
-    <%= render 'layouts/header' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <%= render 'layouts/header' %>
+  <div class="container-fluid">
     <%= yield %>
-  </body>
+  </div>
+</body>
+
 </html>

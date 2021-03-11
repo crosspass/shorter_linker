@@ -14,3 +14,28 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  background-color: #f3f9f9;
+}
+
+.title {
+  text-align: center;
+  margin: 0 1em;
+}
+.group {
+  margin: 1em 0;
+}
+.input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #0d6efd;
+  display: block;
+}
+.input-url {
+  width: 100%;
+}
+.input-url:focus {
+  outline: none;
+}

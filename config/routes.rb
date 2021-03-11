@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }
-  root "welcome#index"
+  root 'linkers#new'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  mount HolidayWorkday::Engine, at: "/holiday_workday"
+  get '*unmatched_route', to: 'application#not_found'
 end

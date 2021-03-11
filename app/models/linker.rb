@@ -2,10 +2,15 @@
 # Linker for user's url changed to short path
 class Linker < ApplicationRecord
   validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }
-  validates :url, presence: true
+  validates :url, presence: true, uniqueness: { scope: :email }
 
   before_create :set_uid, :set_short_path
   after_create :send_show_url_mail
+
+  def visit
+    self.times += 1
+    save!
+  end
 
   private
 
@@ -30,6 +35,6 @@ class Linker < ApplicationRecord
   end
 
   def send_show_url_mail
-    SendEmailJob.perform_later(id)
+    # SendEmailJob.perform_later(id)
   end
 end
