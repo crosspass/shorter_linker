@@ -4,9 +4,9 @@ class ApplicationController < ActionController::Base
 
   def not_found
     linker = Linker.find_by(short_path: request.path[1..])
-    linker.visit
     raise ActionController::RoutingError, 'Not Found' unless linker
 
+    linker.visit
     redirect_to linker.url
   end
 end
