@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount HolidayWorkday::Engine, at: '/holiday_workday'
   resources :linkers
   # devise_for :users
   devise_for :users, controllers: {
