@@ -1,2 +1,3 @@
-Hi, your short link url mange page is 
-<%= link_to @linker.short_url, linker_url(@linker.uid) %>
+<h1>Contiguration you generate short url successful!</h1>
+<p>You can click link it to manage it</p>
+<%= link_to @linker.short_url, [linker_urls_path, @linker.uid].join('/') %>

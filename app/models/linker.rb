@@ -36,5 +36,6 @@ class Linker < ApplicationRecord
 
   def send_show_url_mail
     # SendEmailJob.perform_later(id)
+    UserMailer.with(linker: self).generate_short_url.deliver_now
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_24_031736) do
+ActiveRecord::Schema.define(version: 2021_03_15_093226) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2021_02_24_031736) do
     t.integer "times", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "status"
     t.index ["email"], name: "index_linkers_on_email"
     t.index ["short_path"], name: "index_linkers_on_short_path"
     t.index ["uid"], name: "index_linkers_on_uid"

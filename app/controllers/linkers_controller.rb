@@ -1,6 +1,6 @@
 class LinkersController < ApplicationController
-  before_action :set_linker, only: %i[show edit update destroy]
-  skip_before_action :authenticate_user!, only: %i[new create show]
+  before_action :set_linker, only: %i[edit update destroy]
+  skip_before_action :authenticate_user!, only: %i[new create edit show successful]
 
   # GET /linkers
   # GET /linkers.json
@@ -10,7 +10,9 @@ class LinkersController < ApplicationController
 
   # GET /linkers/1
   # GET /linkers/1.json
-  def show; end
+  def show
+    @linker = Linker.find_by(uid: params[:id])
+  end
 
   # GET /linkers/new
   def new
@@ -18,7 +20,9 @@ class LinkersController < ApplicationController
   end
 
   # GET /linkers/1/edit
-  def edit; end
+  def edit
+    @linker = Linker.find_by(uid: params[:id])
+  end
 
   # POST /linkers
   # POST /linkers.json
@@ -28,7 +32,7 @@ class LinkersController < ApplicationController
 
     respond_to do |format|
       if @linker.save
-        format.html { redirect_to @linker, notice: 'Linker was successfully created.' }
+        format.html { redirect_to successful_path, notice: 'Linker was successfully created.' }
         format.json { render :show, status: :created, location: @linker }
       else
         format.html { render :new }
@@ -37,6 +41,8 @@ class LinkersController < ApplicationController
       end
     end
   end
+
+  def successful; end
 
   # PATCH/PUT /linkers/1
   # PATCH/PUT /linkers/1.json

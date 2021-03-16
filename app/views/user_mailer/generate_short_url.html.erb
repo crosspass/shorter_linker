@@ -1,0 +1,25 @@
+<h1>Contiguration! Generate short url successful.</h1>
+<p>You can click link it to manage it</p>
+<table>
+<thead>
+<tr>
+<td>Url</td>
+<td>short Url</td>
+<td></td>
+</tr>
+</thead>
+  <tbody>
+    <tr>
+      <td>
+        <%= @linker.url %>
+      </td>
+      <td>
+      <% options = Rails.configuration.action_mailer.default_url_options %>
+        <%= link_to "http://#{options[:host]}:#{options[:port]}/#{@linker.short_path}", "http://#{options[:host]}:#{options[:port]}/#{@linker.short_path}" %>
+      </td>
+      <td>
+        <%= link_to 'manage', [linkers_url, @linker.uid, 'edit'].join('/') %>
+      </td>
+    </tr>
+  </tbody>
+</table>

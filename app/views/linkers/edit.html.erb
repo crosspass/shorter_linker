@@ -1,6 +1,5 @@
 <h1>Editing Linker</h1>
+<p><%= @linker.url %></p>
+<p><%= short_url(@linker) %></p>
+<p><%= @linker.status %></p>
 
-<%= render 'form', linker: @linker %>
-
-<%= link_to 'Show', @linker %> |
-<%= link_to 'Back', linkers_path %>

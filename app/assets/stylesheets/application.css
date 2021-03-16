@@ -21,16 +21,19 @@ body {
 
 .title {
   text-align: center;
-  margin: 0 1em;
+  margin: 0.5em 0;
 }
 .group {
+  margin: 1em 0;
+}
+.group label {
   margin: 1em 0;
 }
 .input {
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom: 1px solid #0d6efd;
+  border-bottom: 1px solid #e3e3e3;
   display: block;
 }
 .input-url {
@@ -38,4 +41,8 @@ body {
 }
 .input-url:focus {
   outline: none;
+}
+.successful {
+  margin-top: 100px;
+  text-align: center;
 }
