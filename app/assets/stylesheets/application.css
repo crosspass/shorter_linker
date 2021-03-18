@@ -21,28 +21,48 @@ body {
 
 .title {
   text-align: center;
-  margin: 0.5em 0;
+  margin    : 0.5em 0;
 }
+
 .group {
   margin: 1em 0;
 }
+
 .group label {
   margin: 1em 0;
 }
+
 .input {
-  border-top: none;
-  border-left: none;
-  border-right: none;
+  border-top   : none;
+  border-left  : none;
+  border-right : none;
   border-bottom: 1px solid #e3e3e3;
-  display: block;
+  display      : block;
 }
+
 .input-url {
   width: 100%;
 }
+
 .input-url:focus {
   outline: none;
 }
+
 .successful {
   margin-top: 100px;
   text-align: center;
+}
+
+.login {
+  margin: 40px auto;
+  width : 400px;
+}
+
+.login label,
+.actions {
+  margin: 20px 0 10px;
+}
+
+.login .title {
+  margin: 0 40px;
 }
