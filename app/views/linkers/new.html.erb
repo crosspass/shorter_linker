@@ -1,7 +1,35 @@
-<h1 class="title">Url Shorter</h1>
-<h5>
-Generate short url and send to your email.
-</h5>
-<div id="form">
-  <%= render partial: 'linkers/form', locals: {linker: Linker.new} %>
+<style>
+  .half {
+    border-right: 1px solid #ddd;
+    position: fixed;
+    height: 100%;
+    width: 40%;
+  }
+
+  .welcome {
+    margin: 30% auto;
+    text-align: center;
+  }
+</style>
+<div class="half">
+  <% if user_signed_in? %>
+  <% else %>
+  <div class="welcome">
+    <p>Register account, you will manage short ulrs!</p>
+    <%= link_to 'sign login', new_user_session_path %>
+    <% end %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12 col-md-5">
+  </div>
+  <div class="col-sm-12 col-md-7">
+    <h1 class="title">Url Shorter</h1>
+    <h5>
+      Generate short url and send to your email.
+    </h5>
+    <div id="form">
+      <%= render partial: 'linkers/form', locals: {linker: Linker.new} %>
+    </div>
+  </div>
 </div>
