@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   skip_before_action :verify_authenticity_token
 
   def not_found
-    linker = Linker.find_by(short_path: request.path[1..])
+    linker = Linker.find_by(status: true, short_path: request.path[1..])
     raise ActionController::RoutingError, 'Not Found' unless linker
 
     linker.visit
