@@ -5,4 +5,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :validatable
 
+  has_many :linkers, foreign_key: 'email', primary_key: 'email'
 end

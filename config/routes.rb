@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   mount HolidayWorkday::Engine, at: '/holiday_workday'
-  resources :linkers
+  resources :linkers do
+    put :toggle_status, on: :member
+  end
   # devise_for :users
   devise_for :users, controllers: {
     sessions: 'users/sessions'

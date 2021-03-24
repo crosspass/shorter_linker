@@ -1,5 +1,5 @@
 class LinkersController < ApplicationController
-  before_action :set_linker, only: %i[edit update destroy]
+  before_action :set_linker, only: %i[edit update destroy toggle_status]
   skip_before_action :authenticate_user!, only: %i[new create edit show successful]
 
   # GET /linkers
@@ -66,6 +66,13 @@ class LinkersController < ApplicationController
       format.html { redirect_to linkers_url, notice: 'Linker was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  ##
+  # PUT /likers/:id/toggle_status
+  def toggle_status
+    @linker.toggle_status
+    render json: { message: 'ok' }
   end
 
   private

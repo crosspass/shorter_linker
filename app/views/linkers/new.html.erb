@@ -4,15 +4,33 @@
     position: fixed;
     height: 100%;
     width: 40%;
+    padding: 0 20px;
   }
 
   .welcome {
     margin: 30% auto;
     text-align: center;
   }
+
+  table {
+    table-layout: fixed;
+    width: 100%;
+    white-space: nowrap;
+  }
+
+  th, td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 10px;
+  }
+  .col3 {
+    width: 35%
+  }
 </style>
 <div class="half">
   <% if user_signed_in? %>
+  <%= render partial: 'table', locals: {linkers: current_user.linkers} %>
   <% else %>
   <div class="welcome">
     <p>Register account, you will manage short ulrs!</p>

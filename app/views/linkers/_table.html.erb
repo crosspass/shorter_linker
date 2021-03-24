@@ -1,0 +1,50 @@
+<div>
+  <h1 class="title">Manage your short urls</h1>
+  <table>
+    <thead>
+      <tr>
+        <th class="col3">url</th>
+        <th class="col3">short url</th>
+        <th>times</th>
+        <th>status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% linkers.each do |linker|%>
+      <tr>
+        <td><%= link_to linker.url, linker.url %></td>
+        <td><%= link_to short_url(linker), short_url(linker) %></td>
+        <td><%= linker.times %></td>
+        <td>
+          <div class="form-check form-switch">
+            <input class="form-check-input toggleStatus" type="checkbox" data-id=<%= linker.id %> <%= linker.status ? 'checked' : ''%>>
+          </div>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<script>
+  const es = document.getElementsByClassName('toggleStatus')
+  for (var i = 0, len = es.length | 0; i < len; i = i + 1 | 0) {
+    const e = es[i]
+    e.onclick = () => {
+      fetch(`/linkers/${e.dataset.id}/toggle_status`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          credentials: 'same-origin',
+        })
+        .then(response => response.json())
+        .then(data => {
+          console.log('Success:', data);
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+    }
+  }
+</script>
