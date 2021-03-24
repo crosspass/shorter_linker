@@ -1,20 +1,22 @@
-<%= form_with(model: linker) do |form| %>
-  <div class="group">
-    <%= form.label :url, 'Url you want short', class: 'required' %>
-    <%= form.text_field :url, class: 'input input-url' %>
-    <% if linker.errors.include?(:url) %>
-    <small class="text-danger"><%= linker.errors.full_messages_for(:url).join(',') %></small>
-    <% end %>
-  </div>
-  <div class="group">
-    <%= form.label :email, 'email', class: 'required' %>
-    <%= form.text_field :email, class: 'input' %>
-    <% if linker.errors.include?(:email) %>
-    <small class="text-danger"><%= linker.errors.full_messages_for(:email).join(',') %></small>
-    <% end %>
-  </div>
+<%= form_with(model: linker, local: true) do |form| %>
+<div class="group">
+  <%= form.label :url, 'Url you want short', class: 'required' %>
+  <%= form.text_field :url, class: 'input input-url' %>
+  <% if linker.errors.include?(:url) %>
+  <small class="text-danger"><%= linker.errors.full_messages_for(:url).join(',') %></small>
+  <% end %>
+</div>
+<div class="group">
+  <% if !user_signed_in? %>
+  <%= form.label :email, 'email', class: 'required' %>
+  <%= form.text_field :email, class: 'input' %>
+  <% if linker.errors.include?(:email) %>
+  <small class="text-danger"><%= linker.errors.full_messages_for(:email).join(',') %></small>
+  <% end %>
+  <% end %>
+</div>
 
-  <div class="actions">
-    <%= form.submit 'submit' %>
-  </div>
+<div class="actions">
+  <%= form.submit 'submit' %>
+</div>
 <% end %>

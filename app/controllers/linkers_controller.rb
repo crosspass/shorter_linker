@@ -32,7 +32,13 @@ class LinkersController < ApplicationController
 
     respond_to do |format|
       if @linker.save
-        format.html { redirect_to successful_path, notice: 'Linker was successfully created.' }
+        format.html do
+          if user_signed_in?
+            redirect_to '/'
+          else
+           redirect_to successful_path, notice: 'Linker was successfully created.'
+          end
+        end
         format.json { render :show, status: :created, location: @linker }
       else
         format.html { render :new }
@@ -83,6 +89,8 @@ class LinkersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def linker_params
-    params.fetch(:linker, {}).permit(:url, :email)
+    p = params.fetch(:linker, {}).permit(:url, :email)
+    p[:email] = current_user.email if current_user
+    p
   end
 end
