@@ -1,24 +1,9 @@
-# README
+# shorter_linker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Short your long url
 
-Things you may want to cover:
+You can register account and manage your short url.
 
-* Ruby version
+[Demo](http://139.198.180.2/)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[![GitHub Super-Linter](https://github.com/crosspass/shorter_linker/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/crosspass/shorter_linker/actions)
