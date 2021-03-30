@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
     raise ActionController::RoutingError, 'Not Found' unless linker
 
     linker.visit
+
     redirect_to linker.url
   end
 end
