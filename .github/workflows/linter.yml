@@ -27,7 +27,7 @@ on:
 jobs:
   linter:
     runs-on: ubuntu-latest
-    steps: 
+    steps:
       - uses: actions/checkout@v2
       - name: Install dependencies
         run: sudo apt-get -yqq install libpq-dev build-essential libcurl4-openssl-dev
