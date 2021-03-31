@@ -25,31 +25,6 @@ on:
 # Set the Job #
 ###############
 jobs:
-  linters:
-    name: Linters
-    runs-on: ubuntu-latest
-    steps:
-     ##########################
-     # Checkout the code base #
-     ##########################
-      - name: Checkout Code
-        uses: actions/checkout@v2
-        with:
-          # Full git history is needed to get a proper list of changed files within `super-linter`
-          fetch-depth: 0
-
-     ################################
-     # Run Linter against code base #
-     ################################
-      - name: Lint Code Base
-        uses: github/super-linter@v3
-        env:
-          VALIDATE_ALL_CODEBASE: false
-          DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VALIDATE_RUBY: true
-          VALIDATE_CSS: true
-          VALIDATE_JAVASCRIPT_ES: true
   test:
     runs-on: ubuntu-latest
     services:
@@ -88,7 +63,9 @@ jobs:
          POSTGRES_PASSWORD: postgres
         run: |
           cp config/database.ci.yml config/database.yml
-          rake db:create db:setup
+          bundle exec rails db:setup
+      - name: linter
+        run: bundle exec rubocop
       - name: Run tests
         env:
           PGHOST: localhost
