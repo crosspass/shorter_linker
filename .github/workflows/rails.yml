@@ -32,24 +32,24 @@ jobs:
      ##########################
      # Checkout the code base #
      ##########################
-     - name: Checkout Code
-       uses: actions/checkout@v2
-       with:
-         # Full git history is needed to get a proper list of changed files within `super-linter`
-         fetch-depth: 0
+      - name: Checkout Code
+        uses: actions/checkout@v2
+        with:
+          # Full git history is needed to get a proper list of changed files within `super-linter`
+          fetch-depth: 0
 
      ################################
      # Run Linter against code base #
      ################################
-     - name: Lint Code Base
-       uses: github/super-linter@v3
-       env:
-         VALIDATE_ALL_CODEBASE: false
-         DEFAULT_BRANCH: main
-         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-         VALIDATE_RUBY: true
-         VALIDATE_CSS: true
-         VALIDATE_JAVASCRIPT_ES: true
+      - name: Lint Code Base
+        uses: github/super-linter@v3
+        env:
+          VALIDATE_ALL_CODEBASE: false
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_RUBY: true
+          VALIDATE_CSS: true
+          VALIDATE_JAVASCRIPT_ES: true
   test:
     runs-on: ubuntu-latest
     services:
@@ -66,10 +66,10 @@ jobs:
           --health-timeout 5s
           --health-retries 5
     steps: 
-       - uses: actions/checkout@v2
-        - name: Install dependencies
-          run: sudo apt-get -yqq install libpq-dev build-essential libcurl4-openssl-dev
-       - name: Set up Ruby
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+         run: sudo apt-get -yqq install libpq-dev build-essential libcurl4-openssl-dev
+      - name: Set up Ruby
          uses: ruby/setup-ruby@v1
          with:
            bundler-cache: true
