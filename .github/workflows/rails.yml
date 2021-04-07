@@ -78,3 +78,8 @@ jobs:
         with:
           name: code-coverage
           path: coverage/
+      - name: Formatting and Security Checks
+        run: |
+          bundle exec brakeman -z
+          bundle-audit update
+          bundle-audit
