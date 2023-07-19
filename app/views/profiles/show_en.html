@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Wu Yingchao's resume</title>
+    <meta name="viewport" content="width=device-width">
+    <style>
+     /**
+      * "Variables"
+      */
+     h1,
+     header>h1>span,
+     header>ul>li:before {
+       color: #9BBB59;
+     }
+
+     /**
+      * Style
+      */
+
+     * {
+       margin: 0;
+     }
+
+     html {
+       background: #9BA2B0;
+       font-size: 16px;
+     }
+
+     body {
+       width: 65em;
+       padding: 7em 8%;
+       box-sizing: border-box;
+       margin: 1em auto;
+       background: white;
+       box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, .3);
+       font: 100%/1.6 'Apple Gothic', Tahoma, 'Helvetica Neue', sans-serif;
+       /* font: 100%/1.6 sans-serif; */
+
+       -moz-hyphens: auto;
+       -ms-hyphens: auto;
+       -o-hyphens: auto;
+       -webkit-hyphens: auto;
+       hyphens: auto;
+
+       -moz-transition: .5s font-size;
+       -ms-transition: .5s font-size;
+       -o-transition: .5s font-size;
+       -webkit-transition: .5s font-size;
+       transition: .5s font-size;
+     }
+
+     h1,
+     h2 {
+       page-break-after: avoid;
+     }
+
+     h1 {
+       margin-top: 1.2em;
+       font-size: 180%;
+     }
+
+     h2 {
+       margin-top: 1em;
+       font-size: 150%;
+     }
+
+     a {
+       color: #4F6128;
+     }
+
+     abbr[title] {
+       border-bottom: 1px dotted #4F6128;
+       cursor: help;
+     }
+
+     p {
+       margin: .6em 0;
+     }
+
+     h1+p,
+     h2+p {
+       margin-top: 0;
+     }
+
+     ul {
+       list-style: square;
+     }
+
+     ul ul {
+       padding-left: 3em;
+     }
+
+     header {
+       text-align: center;
+     }
+
+     header>h1 {
+       color: #7F7F7F;
+       border-bottom: 1px solid #9BBB59;
+       margin: 0 0 .15em;
+       text-indent: 1.2em;
+       font-size: 450%;
+       line-height: 1.05;
+       font-variant: normal;
+     }
+
+     header>h1>span {
+       display: inline-block;
+       margin-left: -2.7em;
+       vertical-align: super;
+       font-size: 50%;
+     }
+
+     header>ul {
+       display: block;
+       margin-bottom: .5em;
+     }
+
+     header>ul>li {
+       display: inline;
+       list-style: none;
+     }
+
+     header>ul>li:before {
+       content: '● ';
+     }
+
+     header>ul>li:first-child:before {
+       content: none;
+     }
+
+     address {
+       font-style: normal;
+     }
+
+     ol.timeline {
+       padding: 0;
+       border: 0 solid #ddd;
+       border-width: 4px 0;
+     }
+
+     ol.timeline>li {
+       list-style: none;
+       padding: .4em 0;
+       border: 1px solid white;
+       /* Chrome printing bug */
+       border-top-color: #ccc;
+     }
+
+     ol.timeline>li:first-child {
+       border-top: 0;
+     }
+
+     ol.timeline>li>p {
+       margin: 0;
+     }
+
+     ol.timeline>li>.date {
+       float: left;
+       margin-left: .1em;
+       max-width: 8rem;
+       color: gray;
+       font-size: 110%;
+     }
+
+     ol.timeline>li>.date~p {
+       margin-left: 9rem;
+     }
+
+     .note {
+       margin-top: .4em;
+       font-size: 75%;
+     }
+
+     .note a:not(:hover):not(:active) {
+       color: inherit;
+     }
+
+     footer {
+       margin-top: 3em;
+       font-style: italic;
+     }
+
+     .amp {
+       font-style: italic;
+     }
+
+     #projects .timeline li p:nth-of-type(2) a:first-of-type {
+       font-weight: bold;
+     }
+
+     @media (max-width:950px) {
+       html {
+	 font-size: 12px;
+       }
+     }
+
+     @media (max-width:700px) {
+       html {
+	 font-size: 11px;
+       }
+     }
+
+     @media (max-width:600px) {
+       body {
+	 width: auto;
+	 margin: 1em;
+       }
+     }
+
+     @media print {
+       html {
+	 background: none;
+       }
+
+       body {
+	 box-shadow: none;
+       }
+
+       header>h1 {
+	 color: black;
+       }
+
+       footer {
+	 display: none;
+       }
+     }
+    </style>
+
+  </head>
+
+  <body>
+
+    <header>
+      <h1>Wu Yingchao</h1>
+      <ul>
+	<li><a href="http://http://139.198.180.2/" target="_blank">Open projects</a></li>
+	<li><a href="http://twitter.com/crosspass1" target="_blank">@crosspass1</a></li>
+	<li><a href="https://github.com/crosspass" target="_blank">Github</a></li>
+	<li><a href="mailto: wuyingchao1@gmail.com" target="_blank">wuyingchao1@gmail.com</a></li>
+      </ul>
+    </header>
+
+    <section id="summary">
+      <h1>Summary</h1>
+      <p>
+	I have 7 years RoR developing experience, Familiar with React and Vue.
+      </p>
+      <p>I have some open source projects</p>
+    </section>
+
+    <section id="work-experience">
+      <h1>Work Experience</h1>
+      <ol class="timeline">
+	<li>
+	  <p class="date">2020 – 2021</p>
+	  <p>Remote work</p>
+	  <div>
+	    <h2>Indigo</h2>
+	    <h3>Background</h3>
+	    <div>
+	      Simple service for patient information management
+	    </div>
+	    <h3>Results</h3>
+	    <div>
+	      Adminstor maintain clients basic infomarion.
+	      Client can upload physical examination file, then generate specified report.
+	    </div>
+	    <h3>Technology stack</h3>
+	    <div>
+	      ANT DESIGN PRO(React), Rails
+	    </div>
+	  </div>
+	  <div>
+	    <h2>Hht</h2>
+	    <h3>Background</h3>
+	    <div>
+	      App for Android & iOS with React Native that manage shop goods stocks.
+	    </div>
+	    <h3>Results</h3>
+	    <div>
+	      Carrefour client can inventory of merchandise in the store by this App.
+	    </div>
+	    <h3>Technology stack</h3>
+	    <div>
+	      React-Native
+	    </div>
+	  </div>
+	</li>
+	<li>
+	  <p class="date">2016 – Now</p>
+	  <p>Zhuhai Meizu Technology Co., Ltd.</p>
+	  <h2>Nuclear</h2>
+	  <h3>Bckground</h3>
+	  <div>
+	    Statistics of various data which are produced by Redmine in different dimensions for project managers with
+	    Echart's rich charts.
+	  </div>
+	  <h3>Difficulties</h3>
+	  <p>
+	    <ol>
+	      <li>
+		The statistical data source needs to be filtered. Create views to filter the data on the MySQL database.
+	      </li>
+	      <li>
+		The number of bugs counted is about 100W, and the time-consuming is mainly used for querying in the
+		database.
+		In order to reduce the response time, multi-threaded processing was performed on the statistical process,
+		and the statistical results were appropriately cached.
+	      </li>
+	    </ol>
+	  </p>
+	  <h3>Results</h3>
+	  <ol>
+	    <li>
+	      For the company’s unified login, the Rails Engine plug-in was developed to provide a unified login for the
+	      company’s Rails project.
+	    </li>
+	    <li>
+	      Project managers use the statistical data displayed in Nuclear weekly to identify the risk of the
+	      project's progress.
+	    </li>
+	    <li>
+	      Nuclear sends Apps crash rate warning emails to related person every day. Project managers write summary emails from Nuclear.
+	    </li>
+	  </ol>
+	  <h3>Technology stack</h3>
+	  <div>
+	     Rails, MySQL, Echarts, Vue.js, Redis
+	  </div>
+	  <h2>FVCS</h2>
+	  <h3>Background</h3>
+	  <div>
+	    Manage firmware and apks's complication and release .
+	  </div>
+	  <h3>Results</h3>
+	  <p>
+	    <ol>
+	      <li>
+		Manage about 100,000 firmwares information and about 27,000 Apks information.
+	      </li>
+	      <li>
+		Standardize release process of the company’s firmwares and apks. Reduces the mistakes caused by manual
+		release of firmwares and apks.
+	      </li>
+	    </ol>
+	  </p>
+	  <h3>Technology stack</h3>
+	  <div>
+	     Rails, MySQL, Redis
+	  </div>
+	</li>
+	<li>
+	  <p class="date">2015–2016</p>
+	  <p>Guangzhou Share Technology Co., Ltd.</p>
+	  <h2>
+	    Cherry
+	  </h2>
+	  <h3>Background</h3>
+	  <div>
+	    A standardized chain store management system developed for the vehicle repair shop.
+	  </div>
+	  <h3>Work</h3>
+	  <div>
+	    Develop the functional interface of the order acceptance used by the order acceptor of the store.
+	    Statistics the operation data of the business.
+	  </div>
+	  <h3>Technology stack</h3>
+	  <div>
+	    Rails, Jquery, ReactJS, PostgreSQL
+	  </div>
+	</li>
+      </ol>
+
+      <section id="technical-skills">
+	<h1>Technical skills</h1>
+	<ul>
+	  <li>
+	    <p>
+	      RoR & Ruby
+	    </p>
+	    <p>
+	      ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ Master
+	    </p>
+	    <p>
+	      <ol>
+		<li>
+		  Every day coding with ROR, familiar with Rails mode, able to develop Engine plug-ins for the framework.
+		</li>
+		<li>
+		  Have studied the source of the framework code, understand the design philosophy of the framework.
+		</li>
+		<li>
+		  Ability to use the framework to quickly complete various tasks.
+		</li>
+	      </ol>
+	    </p>
+	  </li>
+	  <li>
+	    <p>
+	      Javascript&React&Vue
+	    </p>
+	    <p>
+	      ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ Master
+	    </p>
+	    <p>
+	      <ol>
+		<li>
+		  I have developed some projects using ReactJS and have a good understanding of its life cycle.
+		</li>
+		<li>
+		   Have experience of compement development practices.
+		</li>
+	      </ol>
+	    </p>
+	  </li>
+	  <li>
+	    <p>
+	      Linux&MySQL&Redis&Nginx
+	    </p>
+	    <p>
+	      ■■■■■■■■■■■■■■■■■■■■■■  Familiar
+	    </p>
+	    <p>
+	      <ol>
+		<li>
+		  Develop in MacOS environment, and deploy services on Ubuntu.
+		</li>
+		<li>
+		   Familiar with tools such as Nginx, Redis, Mysql, etc. on Ubuntu.
+		</li>
+	      </ol>
+	    </p>
+	  </li>
+	  <li>
+	    <p>
+	      Vim&Tmux
+	    </p>
+	    <p>
+	      ■■■■■■■■■■■■■■■■■■■■■■  Familiar
+	      <p>
+		I use these tools every day.
+	      </p>
+	  </li>
+	</ul>
+      </section>
+    </section>
+
+    <section id="languages">
+      <h1>Languages</h1>
+      <ul>
+	<li><strong>Chiense</strong>: Native</li>
+	<li><strong>English</strong>: Read and write in english </li>
+      </ul>
+    </section>
+
+    <section id="interests">
+      <h1>Professional interests</h1>
+      <p>Open web standards, front-end web development, back-end development, API design </p>
+      <p> Web architecture, Data visualization</p>
+    </section>
+
+    <footer>
+      <p></p>
+    </footer>
+
+    <script>
+     (function () {
+       if (!document.querySelectorAll) return;
+       var external = document.querySelectorAll('a[href^="http://"], a[href^="https://"]'), a;
+       for (var i = external.length; a = external[--i];) a.setAttribute('target', '_blank');
+     })();
+    </script>
+
+  </body>
+
+</html>

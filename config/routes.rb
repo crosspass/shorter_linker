@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resource :profiles do
+  end
+
   mount HolidayWorkday::Engine, at: '/holiday_workday'
   resources :linkers do
     put :toggle_status, on: :member
@@ -11,4 +14,6 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get 'successful', to: 'linkers#successful'
   get '*unmatched_route', to: 'application#not_found'
+
+  post 'feishu/card', to: 'feishu#card'
 end
