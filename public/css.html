@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>CSS Examples</title>
+    <meta name="viewport" content="width=device-width">
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      @keyframes bounce {
+        60%, 80%, to {
+          transform: translateY(480px);
+          animation-timing-function: ease-out;
+        }
+        70% {
+          transform: translateY(300px);
+        }
+        90% {
+          transform: translateY(360px);
+        }
+      }
+
+      .ball {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: solid 1px red;
+        animation: bounce 3s cubic-bezier(.215,.61,.355,1);
+        background-color: #ababab;
+      }
+
+      input:not(:focus) + .callout {
+        transform: scale(0);
+        transition: .25s transform;
+      }
+      .callout {
+        transform-origin: 1.4em -.4em;
+        transition: .5s cubic-bezier(.25,.1,.3,1.5) transform;
+      }
+
+      @keyframes blink-smooth { to { color: transparent } }
+
+      .highlight {
+        animation: .5s blink-smooth 6 alternate;
+      }
+
+      @keyframes blink { 50% { color: transparent } }
+      .highlight1 { animation: 1s blink 3 steps(1); }
+
+      @keyframes typing { from { width: 0 }
+      }
+
+      @keyframes caret {
+        50% { border-color: currentColor; }
+      }
+
+      h1 {
+        font-family:  Menlo, Monaco, 'Courier New', monospace;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: .05em solid transparent;
+        animation: typing 6s steps(11),
+                   caret 1s steps(1) infinite;
+      }
+
+      @keyframes panoramic {
+        to { background-position: 100% 0; }
+      }
+
+      .panoramic {
+        width: 150px;
+        height: 150px;
+        background: url("abc.jpeg");
+        background-size: auto 100%;
+        animation: panoramic 10s linear infinite alternate;
+        animation-play-state: paused;
+      }
+
+      .panoramic:hover, .panoramic:focus {
+        animation-play-state: running;
+      }
+
+
+
+      .circle {
+        background: #12af45;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        text-align: center;
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0turn)
+                     translateY(-150px) translateY(50%)
+                     rotate(1turn);
+        }
+        to {
+          rotate(1turn);
+          transform: rotate(1turn)
+                     translateY(-150px) translateY(50%)
+                     rotate(0turn);
+        }
+      }
+      .avatar { animation: spin 3s infinite linear; }
+
+
+      .avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        animation: spin 6s infinite linear;
+        margin-top: 130px;
+      }
+
+      .chapter > div {
+        margin: 1em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Wu Yingchao</h1>
+    </header>
+    <!-- chapter 1 -->
+    <style>
+      .chapter1 {
+        background: #333;
+      }
+      .chapter1-1 {
+        margin: 2em;
+        display: inline-block;
+        width: 5em;
+        height: 5em;
+        border: 10px solid hsla(0,0%,100%,.5);
+        background: white;
+        background-clip: padding-box;
+      }
+      .chapter1-2 {
+        margin: 2em;
+        display: inline-block;
+        width: 5em;
+        height: 5em;
+        background: yellowgreen;
+        box-shadow: 0 0 0 10px #655, 0 0 0 15px deeppink, 0 2px 5px 15px rgba(0,0,0,.6);
+      }
+      .chapter1-3 {
+        margin: 2em;
+        width: 5em;
+        height: 5em;
+        display: inline-block;
+        background: yellowgreen;
+        border: 10px solid #655;
+        outline: 5px solid deeppink;
+      }
+    </style>
+    <h2>chapter2</h2>
+    <section class="chapter1">
+      <div class="chapter1-1"></div>
+      <div class="chapter1-2"></div>
+      <div class="chapter1-3"></div>
+    </section>
+
+
+
+    <!-- chapter 2 -->
+    <section>
+      <div class="chapter-1">abc</div>
+    </section>
+
+
+
+    <!-- chapter 3 -->
+    <style>
+      .chapter3 {
+        background: #121212;
+      }
+      .chapter3-1 {
+        display: inline-block;
+        height: 5em;
+        width: 5em;
+        background: #655;
+        padding: .8em;
+      }
+      .chapter3-1>div {
+        height: 3em;
+        width: 3em;
+        background: tan;
+        border-radius: .8em;
+        padding: 1em;
+      }
+    </style>
+    <h2>Chapter 3</h2>
+    <section class="chapter3">
+      <div class="chapter3-1">
+        <div></div>
+      </div>
+    </section>
+
+
+
+    <!-- chapter 4 -->
+    <h2>Chapter 4 </h2>
+    <section class="chapter4">
+    </section>
+
+
+
+    <!-- chapter 5 -->
+    <style>
+      .chapter5-1 {
+        height: 5em;
+        background: repeating-linear-gradient(30deg, #fb3, #fb3 15px, #58a 0, #58a 30px);
+      }
+      .chapter5-2 {
+        height: 5em;
+        background: #58a;
+        background-image: repeating-linear-gradient(30deg, hsla(0,0%,100%,.1),
+          hsla(0,0%,100%,.1) 15px, transparent 0, transparent 30px);
+      }
+    </style>
+    <section>
+      <h2>Chapter 5</h2>
+      <div class="chapter5-1"></div>
+      <div class="chapter5-2"></div>
+    </section>
+
+
+
+    <!-- chapter 6 -->
+    <style>
+      .chapter6-1 {
+        height: 5em;
+        background: white;
+        background-image: linear-gradient(90deg,rgba(200,0,0,.5) 50%, transparent 0),
+                          linear-gradient( rgba(200,0,0,.5) 50%, transparent 0);
+        background-size: 30px 30px;
+      }
+      .chapter6-2 {
+        height: 5em;
+        background: #58a;
+        background-image: linear-gradient(white 2px, transparent 0),
+                          linear-gradient(90deg, white 2px, transparent 0),
+                          linear-gradient(hsla(0,0%,100%,.3) 1px, transparent 0),
+                          linear-gradient(90deg, hsla(0,0%,100%,.3) 1px, transparent 0);
+        background-size: 75px 75px, 75px 75px, 15px 15px, 15px 15px;
+      }
+      .chapter6-3 {
+        height: 5em;
+        background: #655;
+        background-image: radial-gradient(tan 30%, transparent 0);
+        background-size: 30px 30px;
+      }
+      .chapter6-4 {
+        height: 5em;
+        background: #655;
+        background-image: radial-gradient(tan 30%, transparent 0),
+                          radial-gradient(tan 30%, transparent 0);
+        background-size: 30px 30px;
+        background-position: 0 0, 15px 15px;
+      }
+      .chapter6-5 {
+        height: 5em;
+        background: #eee;
+        background-image: linear-gradient(45deg, #bbb 25%, transparent 0),
+                          linear-gradient(45deg, transparent 75%, #bbb 0),
+                          linear-gradient(45deg, #bbb 25%, transparent 0),
+                          linear-gradient(45deg, transparent 75%, #bbb 0);
+        background-position: 0 0, 15px 15px,
+                             15px 15px, 30px 30px;
+        background-size: 30px 30px;
+      }
+      .chapter6-6 {
+        height: 5em;
+        background: #eee url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" \
+width="100" height="100" fill-opacity=".25"> <rect x="50" width="50" height="50" />  <rect y="50" width="50" height="50" /> </svg>');
+        background-size: 30px 30px;
+      }
+    </style>
+    <section>
+      <h2>Chapter 6</h2>
+      <div class="chapter6-1">
+        <p>I will be here wating for you.</p>
+      </div>
+      <div class="chapter6-2"></div>
+      <div class="chapter6-3"></div>
+      <div class="chapter6-4"></div>
+      <div class="chapter6-5"></div>
+      <div class="chapter6-6"></div>
+    </section>
+
+
+
+    <!-- chapter 7 -->
+    <style>
+      .chapter7-1 {
+        height: 5em;
+        background: linear-gradient(90deg, #fb3 15%, #655 0, #655 40%, #ab4 0, #ab4 65%, hsl(20, 40%, 90%) 0);
+        background-size: 80px 100%;
+      }
+      .chapter7-2 {
+        height: 5em;
+        background: hsl(20, 40%, 90%);
+        background-image: linear-gradient(90deg, #fb3 10px, transparent 0),
+                          linear-gradient(90deg, #ab4 20px, transparent 0),
+                          linear-gradient(90deg, #655 20px, transparent 0);
+        background-size: 80px 100%, 60px 100%, 40px 100%;
+      }
+
+      .chapter7-3 {
+        height: 5em;
+        background: hsl(20, 40%, 90%);
+        background-image: linear-gradient(90deg, #fb3 11px, transparent 0),
+                          linear-gradient(90deg, #ab4 23px, transparent 0),
+                          linear-gradient(90deg, #655 41px, transparent 0);
+        background-size: 41px 100%, 61px 100%, 83px 100%;
+      }
+    </style>
+    <section class="chapter7">
+      <h2>Chapter 7</h2>
+      <div class="chapter7-1"></div>
+      <div class="chapter7-2"></div>
+      <div class="chapter7-3"></div>
+    </section>
+
+
+    <!-- chapter8 -->
+    <style>
+      .chapter8-1 {
+        background: url(chapter8.jpg);
+        background-size: cover;
+        padding: 1em;
+        width: 10em;
+      }
+      .chapter8-1 > div {
+        background: white;
+        padding: 1em;
+      }
+      .chapter8-2 {
+        padding: 1em;
+        width: 10em;
+        border: 1em solid transparent;
+        background: linear-gradient(white, white) padding-box,
+                    url(chapter8.jpg) border-box 0 / cover;
+      }
+      .chapter8-3 {
+        padding: 1em;
+        border: 1em solid transparent;
+        background: linear-gradient(white, white) padding-box,
+                    repeating-linear-gradient(-45deg, red 0, red 12.5%, transparent 0, transparent 25%, #58a 0, #58a 37.5%, transparent 0, transparent 50%) 0 / 3em 3em;
+      }
+      .chapter8-4 {
+        padding: 1em;
+        border: 16px solid transparent;
+        border-image: 16 repeating-linear-gradient(-45deg, red 0, red 1em,
+                                                   transparent 0, transparent 2em,
+                                                   #58a 0, #58a 3em,
+                                                   transparent 0, transparent 4em);
+      }
+      @keyframes ants { to { background-position: 100% } }
+      .chapter8-5 {
+        padding: 1em;
+        border: 1px solid transparent;
+        background: linear-gradient(white, white) padding-box, repeating-linear-gradient(-45deg,
+black 0, black 25%, white 0, white 50% ) 0 / .6em .6em;
+        animation: ants 12s linear infinite;
+      }
+      .chapter8-6 {
+        border-top: .2em solid transparent;
+        border-image: 100% 0 0 linear-gradient(90deg, currentColor 4em, transparent 0);
+        padding-top: 1em;
+      }
+      .chapter8 > div {
+        margin: 1em;
+      }
+    </style>
+    <section class="chapter8">
+      <h2>Chapter 8</h2>
+      <div class="chapter8-1">
+        <div>I have a nice stone art border, don't I look pretty?</div>
+      </div>
+      <div class="chapter8-2">
+        I have a nice stone art border, don't I look pretty?
+      </div>
+      <div class="chapter8-3">
+        I have a nice stone art border, don't I look pretty?
+      </div>
+      <div class="chapter8-4">
+        chapter8-4 I have a nice stone art border, don't I look pretty?
+      </div>
+      <div class="chapter8-5">
+        chapter8-5 I have a nice stone art border, don't I look pretty?
+      </div>
+      <div class="chapter8-6">
+        chapter8-6 I have a nice stone art border, don't I look pretty?
+      </div>
+    </section>
+
+
+
+    <!-- chapter9 -->
+    <style>
+      .chapter9-1 {
+        width: 10em;
+        height: 10em;
+        background: yellow;
+        border: solid yellow 1px;
+        border-radius: 50% / 100% 100% 0 0;
+      }
+      .chapter9-2 {
+        width: 10em;
+        height: 10em;
+        background: yellow;
+        border: solid yellow 1px;
+        border-radius: 100% 0 0 100% / 50%;
+      }
+      .chapter9-3 {
+        width: 10em;
+        height: 10em;
+        background: yellow;
+        border: solid yellow 1px;
+        border-radius: 100% 0 0 0;
+      }
+    </style>
+    <section class="chapter">
+      <h2>Chapter 9</h2>
+      <div class="chapter9-1"></div>
+      <div class="chapter9-2"></div>
+      <div class="chapter9-3"></div>
+    </section>
+
+
+    <!-- chapter9 -->
+    <style>
+      .chapter10-1 {
+        display: inline-block;
+        background: #aaa;
+        padding: 1em;
+        transform: skewX(-45deg);
+      }
+      .chapter10-1 > div {
+        transform: skewX(45deg);
+      }
+      .chapter10-2 {
+        display: inline-block;
+        position: relative;
+        padding: 1em;
+      }
+      .chapter10-2::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: #58a;
+        transform: skew(-45deg);
+        z-index: -1;
+      }
+      .chapter10-3 {
+      }
+    </style>
+    <section class="chapter10">
+      <h2>Chapter 10</h2>
+      <div class="chapter10-1">
+        <div>Hello</div>
+      </div>
+      <div class="chapter10-2"> Hello </div>
+      <div class="chapter10-3"></div>
+    </section>
+
+
+    <!-- chapter11 -->
+    <style>
+      .chapter11-1 {
+        width: 200px;
+        height: 200px;
+        transform: rotate(45deg);
+        overflow: hidden;
+      }
+      .chapter11-1 > img {
+        width: 200px;
+        height: 200px;
+        max-width: 100%;
+        transform: rotate(-45deg) scale(1.42);
+      }
+      .chapter11-2 {
+      }
+      .chapter11-3 {
+      }
+    </style>
+    <section class="chapter">
+      <h2>Chapter 11</h2>
+      <div class="chapter11-1">
+        <img src="chapter8.jpg" />
+      </div>
+      <div class="chapter11-2"></div>
+      <div class="chapter11-3"></div>
+    </section>
+
+
+    <!-- chapter8 -->
+    <style>
+      .chapter8-1 {
+      }
+      .chapter8-2 {
+      }
+      .chapter8-3 {
+      }
+    </style>
+    <section class="chapter8">
+      <h2>Chapter 8</h2>
+      <div class="chapter8-1"></div>
+      <div class="chapter8-2"></div>
+      <div class="chapter8-3"></div>
+    </section>
+
+
+    <!-- chapter8 -->
+    <style>
+      .chapter8-1 {
+      }
+      .chapter8-2 {
+      }
+      .chapter8-3 {
+      }
+    </style>
+    <section class="chapter8">
+      <h2>Chapter 8</h2>
+      <div class="chapter8-1"></div>
+      <div class="chapter8-2"></div>
+      <div class="chapter8-3"></div>
+    </section>
+
+
+    <!-- chapter8 -->
+    <style>
+      .chapter8-1 {
+      }
+      .chapter8-2 {
+      }
+      .chapter8-3 {
+      }
+    </style>
+    <section class="chapter8">
+      <h2>Chapter 8</h2>
+      <div class="chapter8-1"></div>
+      <div class="chapter8-2"></div>
+      <div class="chapter8-3"></div>
+    </section>
+
+
+    <!-- chapter8 -->
+    <style>
+      .chapter8-1 {
+      }
+      .chapter8-2 {
+      }
+      .chapter8-3 {
+      }
+    </style>
+    <section class="chapter8">
+      <h2>Chapter 8</h2>
+      <div class="chapter8-1"></div>
+      <div class="chapter8-2"></div>
+      <div class="chapter8-3"></div>
+    </section>
+
+
+    <!-- chapter8 -->
+    <style>
+      .chapter8-1 {
+      }
+      .chapter8-2 {
+      }
+      .chapter8-3 {
+      }
+    </style>
+    <section class="chapter8">
+      <h2>Chapter 8</h2>
+      <div class="chapter8-1"></div>
+      <div class="chapter8-2"></div>
+      <div class="chapter8-3"></div>
+    </section>
+
+
+    <!-- chapter8 -->
+    <style>
+      .chapter8-1 {
+      }
+      .chapter8-2 {
+      }
+      .chapter8-3 {
+      }
+    </style>
+    <section class="chapter8">
+      <h2>Chapter 8</h2>
+      <div class="chapter8-1"></div>
+      <div class="chapter8-2"></div>
+      <div class="chapter8-3"></div>
+    </section>
+
+
+    <!-- chapter8 -->
+    <style>
+      .chapter8-1 {
+      }
+      .chapter8-2 {
+      }
+      .chapter8-3 {
+      }
+    </style>
+    <section class="chapter8">
+      <h2>Chapter 8</h2>
+      <div class="chapter8-1"></div>
+      <div class="chapter8-2"></div>
+      <div class="chapter8-3"></div>
+    </section>
+
+    <section>
+      <div class="ball"></div>
+    </section>
+
+    <label>
+      Your username:
+    </label>
+    <input id="username" />
+    <div class="callout">Only letters, numbers, underscores (_) and hyphens (-) allowed!</div>
+
+    <!-- css transition -->
+    <section>
+      <p class="highlight">
+      Your username:
+      </p>
+
+      <p class="highlight1">
+      Your username:
+      </p>
+    </section>
+
+
+    <section>
+      <h2>Testing :hover</h2>
+      <style>
+        .a:hover {
+          border: solid 1px lightgray;
+          height: 250px;
+          width: 350px
+        }
+        .b:hover {
+          border: solid 1px red;
+          height: 200px;
+          width: 300px
+        }
+        .inner {
+          height: 150px;
+          width: 250px
+        }
+      </style>
+      <div class="a">
+        <div class="b">
+          <div class="inner">abc</div>
+        </div>
+      </div>
+    </section>
+    <div>
+      <h2>h</h2>
+    </div>
+
+    <section>
+      <div class="circle">
+          <img src="avatar.jpg" class="avatar"/>
+      </div>
+    </section>
+
+    <footer>
+    </footer>
+
+    <script>
+      (function(){
+        const hs = document.getElementsByTagName('h1');
+        console.log('abc');
+        for (let el of hs) {
+          console.log('-------------', el);
+          let len = el.textContent.length
+          let s = el.style;
+          s.width = len + 'ch';
+          s.animationTimingFunction = "steps("+len+"),steps(1)";
+        };
+      })()
+    </script>
+
+  </body>
+
+</html>
